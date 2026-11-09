@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Labb 1</title>
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <!--
+        Reflektion uppgift 1
+
+        Betydelsen av placeringen av <script>-taggen:
+        Webbläsaren läser HTML-dokumentet uppifrån och ned. När den kommer till en vanlig
+        <script>-tagg (utan defer eller async) stannar tolkningen av HTML:en. Skriptet laddas
+        ner och körs innan resten av sidan läses in. Om taggen ligger i <head> körs skriptet
+        alltså innan <body> finns. Då kan skriptet inte komma åt elementen på sidan, och sidan
+        visas dessutom senare eftersom renderingen blockeras. Om taggen i stället ligger sist i
+        <body> har alla element redan lästs in när skriptet körs, så skriptet kan använda dem.
+
+        Hur attributet defer fungerar:
+        Med defer laddas skriptet ner parallellt medan webbläsaren fortsätter att läsa HTML:en,
+        så tolkningen blockeras inte. Skriptet körs först när hela HTML-dokumentet är inläst
+        (precis innan händelsen DOMContentLoaded). Finns flera skript med defer körs de i den
+        ordning de står i dokumentet. Därför kan skript-taggen ligga i <head> och ändå komma åt
+        alla element på sidan. defer fungerar bara på externa skript, alltså när taggen har ett
+        src-attribut.
+    -->
+
+</body>
+</html>
