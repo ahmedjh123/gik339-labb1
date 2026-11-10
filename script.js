@@ -126,6 +126,16 @@ const add = (num1, num2) => {
     !Number.isNaN(num1), och samma för num2. Kontrollen av NaN behövs eftersom NaN har typen
     'number' fast det inte är ett giltigt tal. Programmet går alltså in i if-satsen bara om
     ingen parameter är null/undefined OCH båda är riktiga tal. Annars körs else-satsen.
+
+    Mitt val gällande strängar:
+    Jag har valt att inte acceptera strängar, inte ens strängar som ser ut som tal, t.ex. "3".
+    Funktionens uppgift är att göra en addition. Om en sträng skulle släppas igenom gör
+    JavaScript sammanslagning i stället för addition, t.ex. "0" + 3 blir "03" och inte 3.
+    Genom att kräva att båda parametrarna har typen 'number' (och inte är NaN) blir resultatet
+    alltid en korrekt matematisk summa. Annars får användaren ett tydligt meddelande om att
+    input är felaktig. Ett alternativ hade varit att omvandla strängar till tal med Number(),
+    så att "3" blir 3, men jag valde den striktare lösningen för att funktionen bara ska
+    räkna med värden som faktiskt är tal från början.
 */
 
 
